@@ -52,8 +52,8 @@ for column in Xw.columns:
     if column != "is_safe":
         user_input[column] = st.slider(
             f"{column} Value",
-            min_value=0,
-            max_value=slider_ranges[column][1] + 0.5 * column_ranges[column],
+            min_value=0.0,
+            max_value=float(slider_ranges[column][1] + 0.5 * column_ranges[column]),
             step=0.01,
             value=df_water[column].mean(),
         )
